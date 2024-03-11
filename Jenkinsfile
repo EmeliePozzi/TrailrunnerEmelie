@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Build trailrunnerProject') {
             steps {
-                dir('labb2') {
+                dir('C:/Users/Emelie/Desktop/TrailrunnerEmelieForLabb2Testautomation/labb2') {
                     //Genom att lägga bygget i ett script-block låter jag Jenkins välja att köra bat eller sh-kommandot baserat på operativsystem.
                     script {
                         sh 'mvn clean install'
