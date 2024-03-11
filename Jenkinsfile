@@ -8,7 +8,7 @@ pipeline {
                 git 'https://github.com/EmeliePozzi/TrailrunnerEmelie.git'
             }    
         }
-        stage('Build') {
+        stage('Build trailrunnerProject') {
             steps {
                 dir('labb2') {
                     //Genom att lägga bygget i ett script-block låter jag Jenkins välja att köra bat eller sh-kommandot baserat på operativsystem.
@@ -18,7 +18,7 @@ pipeline {
                 }
             }
         }
-        stage('Test') {
+        stage('Test trailrunnerProject') {
             steps {
                 dir('labb2') {
                     script {
@@ -27,7 +27,7 @@ pipeline {
                 }
             }
         }
-        stage('Post Test') {
+        stage('Post Test from trailrunnerProject') {
             steps {
                 dir('labb2') {
                     script {
@@ -36,5 +36,23 @@ pipeline {
                 }
             }
         }
+        stage('Run Robot and Post Test') {
+            steps {
+                dir('Selenium') {
+                    script {
+                        sh 'robot test'
+                    }
+                }
+            }
+            post {
+                always {
+                    dir('Selenium') {
+                        junit 'output.xml'
+                    }
+                }
+            }
+        }
+
+        
     }
 }
