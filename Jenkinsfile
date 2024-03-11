@@ -3,9 +3,9 @@ pipeline {
 
     stages {
         
-        stage('Checkout') {
+        stage('Checkout (Hämtar senaste kodversionen för den valda grenen)') {
             steps {
-                checkout scm
+                git 'https://github.com/EmeliePozzi/TrailrunnerEmelie.git'
     }
 }
         stage('Build') {
