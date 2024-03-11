@@ -27,10 +27,13 @@ pipeline {
                 }
             }
         }
-        
-        stage('Deploy') {
+        stage('Post Test') {
             steps {
-                echo 'Deploying....'
+                dir('labb2') {
+                    script {
+                        junit '**/target/surefire-reports/*.xml'
+                    }
+                }
             }
         }
     }
