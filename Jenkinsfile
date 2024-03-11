@@ -40,13 +40,13 @@ pipeline {
             steps {
                 dir('Selenium') {
                     script {
-                        sh 'robot test'
+                        sh 'robot test.robot'
                     }
                 }
             }
             post {
                 always {
-                    dir('Selenium') {
+                    dir('Selenium\log') {
                         junit 'output.xml'
                     }
                 }
