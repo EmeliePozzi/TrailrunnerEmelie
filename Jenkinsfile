@@ -10,7 +10,10 @@ pipeline {
 }
         stage('Build') {
             steps {
-                 bat 'mvn clean install'
+                // Navigate to the Maven project directory and build it
+                dir('labb2') {
+                    bat 'mvn clean install'
+                }
             }
         }
         stage('Test') {
