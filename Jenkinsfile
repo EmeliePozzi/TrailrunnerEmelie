@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Build trailrunnerProject') {
             steps {
-                dir('C:/Users/Emelie/Desktop/TrailrunnerEmelieForLabb2Testautomation/labb2') {
+                dir('labb2') {
                     
                     script {
                         sh 'mvn clean install'
