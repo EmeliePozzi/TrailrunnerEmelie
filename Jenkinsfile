@@ -11,7 +11,7 @@ pipeline {
         stage('Build trailrunnerProject') {
             steps {
                 dir('labb2') {
-                    //Genom att lägga bygget i ett script-block låter jag Jenkins välja att köra bat eller sh-kommandot baserat på operativsystem.
+                    
                     script {
                         sh 'mvn clean install'
                     }
