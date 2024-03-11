@@ -12,9 +12,9 @@ pipeline {
             steps {
                 dir('C:/Users/Emelie/Desktop/TrailrunnerEmelieForLabb2Testautomation/labb2') {
                     
-                    
+                    script {
                         bat 'mvn clean install'
-                    
+                    }
                 }
             }
         }
