@@ -46,7 +46,7 @@ pipeline {
             }
             post {
                 always {
-                    dir('Selenium\log') {
+                    dir('Selenium/log') {
                         junit 'output.xml'
                     }
                 }
