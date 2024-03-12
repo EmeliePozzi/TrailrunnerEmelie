@@ -2,6 +2,12 @@ pipeline {
     agent any
 
     stages {
+
+        stage('Clean Workspace') {
+            steps {
+                cleanWs()
+            }
+        }
         
         stage('Checkout (Hämtar senaste kodversionen för den valda grenen)') {
             steps {
