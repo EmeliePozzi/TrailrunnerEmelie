@@ -40,26 +40,13 @@ pipeline {
             steps {
                 dir('Selenium') {
                     script {
-                        sh 'robot test.robot'
+                        sh script: "robot --nostatusrc test.robot", returnStatus: true
                     }
                 }
             }
 
         }
-           post { 
-
-                always { 
-
-                    dir('Selenium/log') { 
-
-                        junit 'output.xml' 
-                        cleanWs()
-
-                    } 
-
-                } 
-
-            } 
+          
         
     }
 }
