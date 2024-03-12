@@ -44,13 +44,7 @@ pipeline {
                     }
                 }
             }
-            post {
-                always {
-                    dir('Selenium/log') {
-                        junit '**/*.xml'
-                    }
-                }
-            }
+
         }
 
         
