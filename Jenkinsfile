@@ -38,11 +38,11 @@ pipeline {
         }
         stage('Run Robot and Post Test') {
             steps {
-                dir('Selenium') {
+            
                     script {
-                        sh script: "robot --nostatusrc test.robot", returnStatus: true, allowEmptyArchive: true
+                        sh script: "robot --nostatusrc Selenium/test.robot", returnStatus: true, allowEmptyArchive: true
                     }
-                }
+                
             }
 
         }
