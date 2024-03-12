@@ -40,7 +40,7 @@ pipeline {
             steps {
                 dir('Selenium') {
                     script {
-                        sh script: "robot --nostatusrc test.robot", returnStatus: true
+                        sh script: "robot --nostatusrc test.robot", returnStatus: true, allowEmptyArchive: true
                     }
                 }
             }
