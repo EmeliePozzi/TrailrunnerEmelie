@@ -50,7 +50,7 @@ pipeline {
 
                 always { 
 
-                    dir('Selenium/log') { 
+                    dir('Selenium') { 
 
                         junit 'output.xml' 
 
