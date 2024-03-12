@@ -53,6 +53,7 @@ pipeline {
                     dir('Selenium/log') { 
 
                         junit 'output.xml' 
+                        cleanWs()
 
                     } 
 
